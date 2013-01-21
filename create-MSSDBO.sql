@@ -1,0 +1,8 @@
+-- Create a tablespace for isolation.
+CREATE BIGFILE TABLESPACE MSSDBO DATAFILE 'MSSDBO.dat' SIZE 20M AUTOEXTEND ON;
+-- Create the user.
+CREATE USER MSSDBO IDENTIFIED BY MSSDBO DEFAULT TABLESPACE MSSDBO;
+-- Grant permissions.
+GRANT CREATE SESSION,CREATE SYNONYM,CONNECT,RESOURCE,CREATE VIEW,IMP_FULL_DATABASE to MSSDBO;
+-- end the sqlplus session so that the ssh command returns.
+quit;
